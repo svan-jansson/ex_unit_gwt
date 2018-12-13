@@ -10,7 +10,7 @@ by adding `ex_unit_gwt` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:ex_unit_gwt, "~> 0.1.0"}
+    {:ex_unit_gwt, "~> 0.1.0", only: :test}
   ]
 end
 ```
