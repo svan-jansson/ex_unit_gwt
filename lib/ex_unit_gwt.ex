@@ -41,6 +41,14 @@ defmodule ExUnitGWT do
 
   @doc """
   Used to describe some terse yet descriptive text of what is desired in order to realize a named business value as an explicit system actor I want to gain some beneficial outcome which furthers the goal
+
+  ## Examples
+
+  ```
+  feature "Shopping cart" do
+    ...
+  end
+  ```
   """
   defmacro feature(description, do: block) do
     quote do
@@ -57,6 +65,14 @@ defmodule ExUnitGWT do
 
   @doc """
   Used to describe some determinable business situation
+
+  ## Examples
+
+  ```
+  scenario "User adds item to cart" do
+    ...
+  end
+  ```
   """
   defmacro scenario(description, var \\ quote(do: _), contents) do
     contents =
@@ -85,6 +101,14 @@ defmodule ExUnitGWT do
 
   @doc """
   Describes a scenario precondition
+
+  ## Examples
+
+  ```
+  given? "I'm a logged-in User" do
+    ...
+  end
+  ```
   """
   defmacro given?(_description, clause) do
     block = Keyword.get(clause, :do, nil)
@@ -96,6 +120,14 @@ defmodule ExUnitGWT do
 
   @doc """
   Describes an action by the actor
+
+  ## Examples
+
+  ```
+  when? "I go to the Item page and click Add" do
+    ...
+  end
+  ```
   """
   defmacro when?(_description, clause) do
     block = Keyword.get(clause, :do, nil)
@@ -107,6 +139,14 @@ defmodule ExUnitGWT do
 
   @doc """
   Describes a testable outcome
+
+  ## Examples
+
+  ```
+  then? "The quantity of items in my cart should go up" do
+    ...
+  end
+  ```
   """
   defmacro then?(_description, clause) do
     block = Keyword.get(clause, :do, nil)
@@ -118,6 +158,14 @@ defmodule ExUnitGWT do
 
   @doc """
   Used to describe additional preconditions, actions or expected results
+
+  ## Examples
+
+  ```
+  and? "My subtotal should increment" do
+    ...
+  end
+  ```
   """
   defmacro and?(_description, clause) do
     block = Keyword.get(clause, :do, nil)
@@ -128,13 +176,13 @@ defmodule ExUnitGWT do
   end
 
   @doc """
-  Used to describe additional preconditions, actions or expected results
+  Used to describe additional negating preconditions, actions or expected results
 
-  ### Example
+  ## Examples
 
   ```
-  but? "Then I should not be able to go back to the home screen" do
-    assert home_screen_navigation == false
+  but? "I should not be able to check out before adding payment info" do
+    ...
   end
   ```
   """
