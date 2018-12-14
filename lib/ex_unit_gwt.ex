@@ -5,7 +5,7 @@ defmodule ExUnitGWT do
   ## Examples
 
   ```
-  defmodule ExunitGwtExample do
+  defmodule ExUnitGWTExample do
       use ExUnit.Case
       import ExUnitGWT
 
