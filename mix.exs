@@ -4,19 +4,28 @@ defmodule ExUnitGwt.MixProject do
   def project do
     [
       app: :ex_unit_gwt,
-      version: "0.1.0",
+      version: "1.0.0",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: [],
+      package: package()
     ]
   end
 
-  def application do
+  def application, do: []
+
+  defp package do
     [
-      extra_applications: [:logger]
+      description: "Given-When-Then syntax for ExUnit",
+      files: ["lib", "mix.exs", "README.md", ".formatter.exs"],
+      maintainers: [
+        "Erik Svensson"
+      ],
+      licenses: ["MIT"],
+      links: %{
+        Website: "https://github.com/svan-jansson/ex_unit_gwt",
+        GitHub: "https://github.com/svan-jansson/ex_unit_gwt"
+      }
     ]
-  end
-
-  defp deps do
   end
 end
