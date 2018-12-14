@@ -1,6 +1,6 @@
 defmodule ExUnitGwt do
   @moduledoc """
-  Macros that add Given-When-Then (GWT) syntax
+  Macros that add Given-When-Then (GWT) syntax to ExUnit
 
   ## Examples
 
