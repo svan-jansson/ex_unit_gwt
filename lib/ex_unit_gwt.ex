@@ -126,4 +126,23 @@ defmodule ExUnitGWT do
       unquote(block)
     end
   end
+
+  @doc """
+  Used to describe additional preconditions, actions or expected results
+
+  ### Example
+
+  ```
+  but? "Then I should not be able to go back to the home screen" do
+    assert home_screen_navigation == false
+  end
+  ```
+  """
+  defmacro but?(_description, clause) do
+    block = Keyword.get(clause, :do, nil)
+
+    quote do
+      unquote(block)
+    end
+  end
 end
