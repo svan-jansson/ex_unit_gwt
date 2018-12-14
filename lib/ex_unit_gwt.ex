@@ -1,6 +1,6 @@
 defmodule ExUnitGWT do
   @moduledoc """
-  Macros that add Given-When-Then (GWT) syntax to ExUnit
+  Helpers that add Given-When-Then (GWT) syntax to ExUnit
 
   ## Examples
 
@@ -86,7 +86,7 @@ defmodule ExUnitGWT do
   @doc """
   Describes a scenario precondition
   """
-  defmacro given?(_, clause) do
+  defmacro given?(_description, clause) do
     block = Keyword.get(clause, :do, nil)
 
     quote do
@@ -97,7 +97,7 @@ defmodule ExUnitGWT do
   @doc """
   Describes an action by the actor
   """
-  defmacro when?(_, clause) do
+  defmacro when?(_description, clause) do
     block = Keyword.get(clause, :do, nil)
 
     quote do
@@ -108,7 +108,7 @@ defmodule ExUnitGWT do
   @doc """
   Describes a testable outcome
   """
-  defmacro then?(_, clause) do
+  defmacro then?(_description, clause) do
     block = Keyword.get(clause, :do, nil)
 
     quote do
@@ -119,7 +119,7 @@ defmodule ExUnitGWT do
   @doc """
   Used to describe additional preconditions, actions or expected results
   """
-  defmacro and?(_, clause) do
+  defmacro and?(_description, clause) do
     block = Keyword.get(clause, :do, nil)
 
     quote do
