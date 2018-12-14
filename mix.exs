@@ -7,12 +7,19 @@ defmodule ExUnitGwt.MixProject do
       version: "1.0.0",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
-      deps: [],
-      package: package()
+      deps: deps(),
+      package: package(),
+      docs: docs(),
+      name: "ExUnitGWT",
+      source_url: "https://github.com/svan-jansson/ex_unit_gwt"
     ]
   end
 
   def application, do: []
+
+  defp deps do
+    [{:ex_doc, "~> 0.19", only: :dev, runtime: false}]
+  end
 
   defp package do
     [
@@ -26,6 +33,12 @@ defmodule ExUnitGwt.MixProject do
         Website: "https://github.com/svan-jansson/ex_unit_gwt",
         GitHub: "https://github.com/svan-jansson/ex_unit_gwt"
       }
+    ]
+  end
+
+  defp docs do
+    [
+      main: "ExUnitGwt"
     ]
   end
 end
