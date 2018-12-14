@@ -1,4 +1,4 @@
-defmodule ExUnitGwt.MixProject do
+defmodule ExUnitGWT.MixProject do
   use Mix.Project
 
   def project do
@@ -38,7 +38,7 @@ defmodule ExUnitGwt.MixProject do
 
   defp docs do
     [
-      main: "ExUnitGwt"
+      main: "ExUnitGWT"
     ]
   end
 end

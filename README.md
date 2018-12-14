@@ -24,7 +24,7 @@ be found at [https://hexdocs.pm/ex_unit_gwt](https://hexdocs.pm/ex_unit_gwt).
 The example below describes a feature containing a test scenario, borrowed from the Gherkin docs. The module goes inside the /test folder, just like any other ExUnit test.
 
 ```elixir
-defmodule ExunitGwtExample do
+defmodule ExunitGWTExample do
     use ExUnit.Case
     import ExUnitGWT
 
