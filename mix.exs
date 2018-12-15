@@ -15,7 +15,13 @@ defmodule ExUnitGWT.MixProject do
     ]
   end
 
-  def application, do: []
+  def application do
+    [
+      env: [
+        formatters: [ExUnitGWT.CLIFormatter]
+      ]
+    ]
+  end
 
   defp deps do
     [{:ex_doc, "~> 0.19", only: :dev, runtime: false}]
